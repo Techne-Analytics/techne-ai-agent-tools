@@ -50,6 +50,11 @@ make test-skills-spec   # validate skill structure
 
 ## Agent Safety Rules
 
+Deny rules enforced in `.claude/settings.json`:
+- `git push --force` / `git push -f` — blocked
+- Writing `.env`, `.pem`, `.key` files — blocked
+
+Additional rules:
 - Do not merge PRs unless the user explicitly asks
 - Do not force-push to main
 - Do not commit sensitive files (.env, credentials, keys)
