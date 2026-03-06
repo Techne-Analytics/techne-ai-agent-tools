@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Write(*.env)",
+      "Write(*.pem)",
+      "Write(*.key)"
+    ]
+  }
+}
