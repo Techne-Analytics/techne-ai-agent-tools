@@ -1,0 +1,13 @@
+{
+  "name": "audit-claude",
+  "version": "1.1.0",
+  "description": "Periodic CLAUDE.md quality audit, automation recommendations, and usage health analysis with GitHub issue tracking",
+  "author": {
+    "name": "Techne Analytics"
+  },
+  "repository": "https://github.com/Techne-Analytics/agentic-ai-tooling",
+  "license": "MIT",
+  "keywords": ["audit", "claude-md", "automation", "maintenance", "usage-health", "friction-analysis"],
+  "skills": ["audit-claude"],
+  "commands": ["audit-claude"]
+}
