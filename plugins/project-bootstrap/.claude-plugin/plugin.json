@@ -1,0 +1,13 @@
+{
+  "name": "project-bootstrap",
+  "version": "0.1.0",
+  "description": "Set up Claude Code configuration for a new project with CLAUDE.md, hooks, MCP servers, and best practices",
+  "author": {
+    "name": "Techne Analytics"
+  },
+  "repository": "https://github.com/Techne-Analytics/techne-ai-agent-tools",
+  "license": "MIT",
+  "keywords": ["bootstrap", "setup", "claude-md", "hooks", "mcp", "onboarding"],
+  "skills": ["project-bootstrap"],
+  "commands": ["project-bootstrap"]
+}
