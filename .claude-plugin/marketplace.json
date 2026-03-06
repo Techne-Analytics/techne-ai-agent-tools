@@ -1,0 +1,21 @@
+{
+  "name": "techne-ai-agent-tools",
+  "owner": {
+    "name": "Techne Analytics",
+    "email": "dev@techneanalytics.com"
+  },
+  "plugins": [
+    {
+      "name": "audit-claude",
+      "source": "./plugins/audit-claude",
+      "description": "Periodic CLAUDE.md quality audit, automation recommendations, and usage health analysis with GitHub issue tracking",
+      "version": "1.1.0"
+    },
+    {
+      "name": "project-bootstrap",
+      "source": "./plugins/project-bootstrap",
+      "description": "Set up Claude Code configuration for a new project with CLAUDE.md, hooks, MCP servers, and best practices",
+      "version": "0.1.0"
+    }
+  ]
+}
