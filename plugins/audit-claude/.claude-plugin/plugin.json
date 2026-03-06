@@ -5,9 +5,7 @@
   "author": {
     "name": "Techne Analytics"
   },
-  "repository": "https://github.com/Techne-Analytics/agentic-ai-tooling",
+  "repository": "https://github.com/Techne-Analytics/techne-ai-agent-tools",
   "license": "MIT",
-  "keywords": ["audit", "claude-md", "automation", "maintenance", "usage-health", "friction-analysis"],
-  "skills": ["audit-claude"],
-  "commands": ["audit-claude"]
+  "keywords": ["audit", "claude-md", "automation", "maintenance", "usage-health", "friction-analysis"]
 }

@@ -7,7 +7,5 @@
   },
   "repository": "https://github.com/Techne-Analytics/techne-ai-agent-tools",
   "license": "MIT",
-  "keywords": ["bootstrap", "setup", "claude-md", "hooks", "mcp", "onboarding"],
-  "skills": ["project-bootstrap"],
-  "commands": ["project-bootstrap"]
+  "keywords": ["bootstrap", "setup", "claude-md", "hooks", "mcp", "onboarding"]
 }

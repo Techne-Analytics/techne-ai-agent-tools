@@ -92,31 +92,22 @@ class TestPluginJsonContents:
 
 
 class TestPluginJsonReferences:
-    def test_plugin_json_skills_reference_actual_skills(self) -> None:
+    def test_plugin_json_does_not_use_bare_name_arrays(self) -> None:
+        """Plugin.json skills/commands must be paths (./...) not bare names."""
         data = _load_marketplace()
         for plugin in data["plugins"]:
             source = pathlib.Path(plugin["source"])
             pj_path = REPO_ROOT / source / ".claude-plugin" / "plugin.json"
             pj = json.loads(pj_path.read_text(encoding="utf-8"))
-            for skill_name in pj.get("skills", []):
-                skill_dir = REPO_ROOT / source / "skills" / skill_name
-                assert (skill_dir / "SKILL.md").exists(), (
-                    f"plugin '{plugin['name']}' references skill '{skill_name}' "
-                    f"but {skill_dir / 'SKILL.md'} not found"
-                )
-
-    def test_plugin_json_commands_reference_actual_commands(self) -> None:
-        data = _load_marketplace()
-        for plugin in data["plugins"]:
-            source = pathlib.Path(plugin["source"])
-            pj_path = REPO_ROOT / source / ".claude-plugin" / "plugin.json"
-            pj = json.loads(pj_path.read_text(encoding="utf-8"))
-            for cmd_name in pj.get("commands", []):
-                cmd_file = REPO_ROOT / source / "commands" / f"{cmd_name}.md"
-                assert cmd_file.exists(), (
-                    f"plugin '{plugin['name']}' references command '{cmd_name}' "
-                    f"but {cmd_file} not found"
-                )
+            for field in ("skills", "commands"):
+                values = pj.get(field, [])
+                if isinstance(values, str):
+                    values = [values]
+                for val in values:
+                    assert val.startswith("./"), (
+                        f"plugin '{plugin['name']}' {field} entry '{val}' must be a path starting with './' "
+                        f"(bare names cause validation errors)"
+                    )
 
 
 class TestCommandFrontmatter:
